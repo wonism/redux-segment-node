@@ -35,6 +35,7 @@ store.dispatch({
 
 ## Configuration
 > createSegmentTracker arguments
+
 | property   | type             | remark |
 |:-----------|:-----------------|:-------|
 | key        | string(required) |        |
@@ -42,6 +43,12 @@ store.dispatch({
 | host       | string(optional) | Host where reports will be sent. Useful for debug. |
 | flushAt    | number(optional) | The number of messages to enqueue before flushing. |
 | flushAfter | number(optional) | The number of milliseconds to wait before flushing the queue automatically. |
+
+## Demo
+```
+$ npm run dev
+# and visit localhost:7777
+```
 
 ## Documentation for segment
 https://segment.com/libraries/node
