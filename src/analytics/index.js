@@ -1,3 +1,4 @@
+import 'setimmediate';
 import base64 from 'base-64';
 import { WEB, ANDROID, IOS } from '../constants';
 import assert from '../utils/assert';
@@ -8,8 +9,6 @@ import fetchRetry from '../utils/fetchRetry';
 import parseResponse from '../utils/parseResponse';
 import uid from '../utils/uid';
 import { version } from '../../package.json';
-
-require('setimmediate');
 
 const noop = () => {};
 
@@ -151,11 +150,10 @@ export default class Analytics {
    * @return {Analytics}
    */
   alias(msg, fn) {
-    const message = setId(msg, this);
+    const message = setId(msg, this, true);
     validate(message);
 
-    assert(message.userId, 'You must pass a `userId`.');
-    assert(message.previousId, 'You must pass a `previousId`.');
+    assert(message.userId, 'You must pass a `userId` for new `id`.');
 
     this.enqueue('alias', message, fn);
 

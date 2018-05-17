@@ -7,8 +7,7 @@
     "dev": "NODE_ENV=development webpack-dev-server --config webpack.config.js --hot --host 0.0.0.0",
     "lint": "eslint src/**/*.js || true",
     "format": "prettier-eslint --write \"./src/**/*.js\"",
-    "build": "NODE_ENV=production webpack -p --config webpack.config.js",
-    "precommit": "npm run lint && npm run build && npm run format && git add ."
+    "build": "NODE_ENV=production webpack -p --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -41,7 +40,7 @@
     "eslint-loader": "^2.0.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-lodash-fp": "^2.1.3",
-    "husky": "^0.14.3",
+    "husky": "^1.0.0-rc.6",
     "prettier": "^1.12.1",
     "prettier-eslint-cli": "^4.7.1",
     "redux": "^4.0.0",
@@ -56,5 +55,10 @@
     "lodash": "^4.17.10",
     "setimmediate": "^1.0.5",
     "type-of": "^2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run format && npm run build && git add ."
+    }
   }
 }
