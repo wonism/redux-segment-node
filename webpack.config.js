@@ -44,7 +44,7 @@ const config = {
   entry: path.resolve(__dirname, isProduction ? 'src' : 'demo', 'index.js'),
   optimization,
   output: {
-    filename: 'redux-segment-platform.js',
+    filename: 'redux-segment-node.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     libraryTarget: 'umd',

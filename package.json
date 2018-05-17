@@ -1,8 +1,8 @@
 {
-  "name": "redux-segment-platform",
+  "name": "redux-segment-node",
   "version": "1.0.0",
   "description": "redux middleware for segment",
-  "main": "dist/redux-segment-platform.js",
+  "main": "dist/redux-segment-node.js",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config webpack.config.js --hot --host 0.0.0.0",
     "lint": "eslint src/**/*.js || true",
@@ -11,21 +11,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wonism/redux-segment-platform.git"
+    "url": "git+https://github.com/wonism/redux-segment-node.git"
   },
   "keywords": [
     "redux",
     "segment",
-    "redux-segment-platform",
+    "redux-segment-node",
     "reactjs",
     "react-native"
   ],
   "author": "wonism",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wonism/redux-segment-platform/issues"
+    "url": "https://github.com/wonism/redux-segment-node/issues"
   },
-  "homepage": "https://github.com/wonism/redux-segment-platform#readme",
+  "homepage": "https://github.com/wonism/redux-segment-node#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",

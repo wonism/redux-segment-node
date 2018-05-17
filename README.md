@@ -1,11 +1,11 @@
-# Redux Segment Platform
+# Redux Segment Node
 > Redux middleware for [segment](https://segment.com/). This library was
 > created with reference to
 > [analytics-react-native](https://github.com/neiker/analytics-react-native).
 
 ## Installation
 ```
-$ npm i -S redux-segment-platform
+$ npm i -S redux-segment-node
 ```
 
 ## Demo
@@ -18,7 +18,7 @@ $ npm run dev
 ## Usage
 ```js
 // import { applyMiddleware, createStore } from 'redux';
-import createSegmentTracker from 'redux-segment-platform';
+import createSegmentTracker from 'redux-segment-node';
 
 const segmentMiddleware = createSegmentTracker({
   key: 'API_KEY',
