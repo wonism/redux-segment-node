@@ -1,6 +1,6 @@
 {
   "name": "redux-segment-node",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "redux middleware for segment",
   "main": "dist/redux-segment-node.js",
   "scripts": {

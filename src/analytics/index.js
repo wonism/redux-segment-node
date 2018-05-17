@@ -1,6 +1,6 @@
 import 'setimmediate';
 import base64 from 'base-64';
-import { WEB, ANDROID, IOS } from '../constants';
+import { WEB, ANDROID, IOS, SIGN_OUT, LOG_OUT } from '../constants';
 import assert from '../utils/assert';
 import validate from '../utils/validate';
 import setId from '../utils/setId';
@@ -17,6 +17,7 @@ export default class Analytics {
   static DEFAULT_HOST = 'https://api.segment.io';
   static DEFAULT_FLUSH_AT = 20;
   static DEFAULT_FLUSH_AFTER = 10000;
+  static DEFAULT_UID = uid(32);
 
   /**
    * Initialize a new `Analytics` with your Segment project's `writeKey` and an
@@ -36,6 +37,7 @@ export default class Analytics {
       host = Analytics.DEFAULT_HOST,
       flushAt = Analytics.DEFAULT_FLUSH_AT,
       flushAfter = Analytics.DEFAULT_FLUSH_AFTER,
+      uid = Analytics.DEFAULT_UID,
     } = {}
   ) {
     assert(writeKey, "You must pass your Segment project's write key.");
@@ -51,7 +53,7 @@ export default class Analytics {
     this.flushAt = Math.max(flushAt, 1);
     this.flushAfter = flushAfter;
     this.userId = null;
-    this.anonymousId = uid(32);
+    this.anonymousId = uid;
   }
 
   /**
@@ -106,6 +108,12 @@ export default class Analytics {
     assert(message.event, 'You must pass an `event`.');
 
     this.enqueue('track', message, fn);
+
+    if (
+      oneOf({ val: message.event.toLowerCase().replace(/(-|_)/g, ''), rules: [SIGN_OUT, LOG_OUT] })
+    ) {
+      this.userId = null;
+    }
 
     return this;
   }

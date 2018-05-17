@@ -4,6 +4,9 @@ export const WEB = '';
 export const ANDROID = 'android';
 export const IOS = 'ios';
 
+export const SIGN_OUT = 'signout';
+export const LOG_OUT = 'logout';
+
 export const EVENT_TYPE_IDENTIFY = 'identify';
 export const EVENT_TYPE_GROUP = 'group';
 export const EVENT_TYPE_TRACK = 'track';

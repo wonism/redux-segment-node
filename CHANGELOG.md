@@ -6,3 +6,7 @@ __1.0.0 (2018-05-16)__
 __1.0.1 (2018-05-17)__
 - remove unused packages
 - add `.npmignore`
+
+__1.0.2 (2018-05-17)__
+- remove userId when `signout` event is occured
+- add some rules(`properties`, `traits`) for validating payloads

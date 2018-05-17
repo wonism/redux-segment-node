@@ -41,6 +41,8 @@ store.dispatch({
 });
 
 // track (required: pass `event` in `eventPayload`)
+// If you pass the `signout` or `logout` as an `event` in `track` type,
+// The `userId` will be removed.
 store.dispatch({
   type: 'CLICK_CTA_BUTTON',
   analytics: {

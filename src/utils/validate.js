@@ -18,16 +18,24 @@ const rules = [
     types: 'object',
   },
   {
+    name: 'properties',
+    types: 'object',
+  },
+  {
+    name: 'traits',
+    types: 'object',
+  },
+  {
+    name: 'integrations',
+    types: 'object',
+  },
+  {
     name: 'event',
     types: 'string',
   },
   {
     name: 'groupId',
     types: ['string', 'number'],
-  },
-  {
-    name: 'integrations',
-    types: 'object',
   },
   {
     name: 'name',
