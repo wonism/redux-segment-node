@@ -6,6 +6,7 @@
   "presets": [
     ["env", {
       "targets": {
+        "browsers": ["last 2 versions", "> 10%", "ie 9"],
         "node": "current"
       }
     }]

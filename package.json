@@ -1,6 +1,6 @@
 {
   "name": "redux-segment-node",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "redux middleware for segment",
   "main": "dist/redux-segment-node.js",
   "scripts": {
@@ -40,6 +40,7 @@
     "eslint-loader": "^2.0.0",
     "eslint-plugin-import": "^2.11.0",
     "husky": "^1.0.0-rc.6",
+    "lint-staged": "^7.1.3",
     "prettier": "^1.12.1",
     "prettier-eslint-cli": "^4.7.1",
     "redux": "^4.0.0",
@@ -56,7 +57,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run format && npm run build && git add ."
+      "pre-commit": "npm run build && lint-staged"
     }
   }
 }

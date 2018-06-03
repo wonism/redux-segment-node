@@ -10,3 +10,7 @@ __1.0.1 (2018-05-17)__
 __1.0.2 (2018-05-17)__
 - remove userId when `signout` event is occured
 - add some rules(`properties`, `traits`) for validating payloads
+
+__1.0.3 (2018-06-04)__
+- modify `.babelrc` to fix `Name Expected` issue when is used with `UglifyJS`
+- add `lint-staged`
