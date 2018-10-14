@@ -20,3 +20,13 @@ node_modules/
 # log
 dump.rdb
 nohup.out
+
+# source
+src/
+demo/
+.babelrc
+.eslintignore
+.eslintrc.js
+.lintstagedrc
+config.json
+webpack.config.js

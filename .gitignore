@@ -23,3 +23,6 @@ config.json
 # log
 dump.rdb
 nohup.out
+
+# build
+dist/
