@@ -1,14 +1,16 @@
 {
   "name": "redux-segment-node",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "redux middleware for segment",
+  "jsnext:main": "es/index.js",
   "main": "dist/redux-segment-node.js",
   "scripts": {
+    "test": "jest",
     "dev": "NODE_ENV=development webpack-dev-server --config webpack.config.js --hot --host 0.0.0.0",
     "lint": "eslint src/**/*.js || true",
     "format": "prettier-eslint --write \"./src/**/*.js\"",
     "build": "NODE_ENV=production webpack -p --config webpack.config.js",
-    "prepare": "npm run build"
+    "prepare": "npm run build && npm t && lint-staged"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -41,6 +44,7 @@
     "eslint-loader": "^2.0.0",
     "eslint-plugin-import": "^2.11.0",
     "husky": "^1.0.0-rc.6",
+    "jest": "^23.6.0",
     "lint-staged": "^7.1.3",
     "prettier": "^1.12.1",
     "prettier-eslint-cli": "^4.7.1",
@@ -58,7 +62,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run build && lint-staged"
+      "pre-commit": "npm run build && npm t && lint-staged"
+    }
+  },
+  "jest": {
+    "verbose": true,
+    "bail": true,
+    "transform": {
+      "^.+\\.js$": "babel-jest"
     }
   }
 }

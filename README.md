@@ -3,6 +3,9 @@
 > created with reference to
 > [analytics-react-native](https://github.com/neiker/analytics-react-native).
 
+[![npm version](https://badge.fury.io/js/redux-segment-node.svg)](https://badge.fury.io/js/redux-segment-node)
+[![Build Status](https://travis-ci.org/wonism/redux-segment-node.svg)](https://travis-ci.org/wonism/redux-segment-node)
+
 ## Installation
 ```
 $ npm i -S redux-segment-node

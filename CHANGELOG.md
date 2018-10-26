@@ -17,3 +17,6 @@ __1.0.3 (2018-06-04)__
 
 __1.0.4 (2018-10-14)__
 - resolve vulnerabilities
+
+__1.0.5 (2018-10-26)__
+- write test codes

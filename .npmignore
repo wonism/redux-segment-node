@@ -21,8 +21,7 @@ node_modules/
 dump.rdb
 nohup.out
 
-# source
-src/
+# development
 demo/
 .babelrc
 .eslintignore

@@ -11,9 +11,7 @@ const developmentPlugins = [
   new webpack.NoEmitOnErrorsPlugin(),
 ];
 
-const productionPlugins = [
-  new CompressionPlugin(),
-];
+const productionPlugins = [new CompressionPlugin()];
 
 const plugins = [
   new webpack.DefinePlugin({
@@ -23,25 +21,24 @@ const plugins = [
       },
     },
   }),
-].concat(isProduction ?
-  productionPlugins :
-  developmentPlugins
-);
+].concat(isProduction ? productionPlugins : developmentPlugins);
 
-const optimization = isProduction ? {
-  minimizer: [
-    new UglifyWebpackPlugin({
-      sourceMap: false,
-      extractComments: {
-        banner: false
-      },
-    }),
-  ],
-} : {};
+const optimization = isProduction
+  ? {
+      minimizer: [
+        new UglifyWebpackPlugin({
+          sourceMap: false,
+          extractComments: {
+            banner: false,
+          },
+        }),
+      ],
+    }
+  : {};
 
 const config = {
   mode: isProduction ? 'production' : 'development',
-  entry: path.resolve(__dirname, isProduction ? 'src' : 'demo', 'index.js'),
+  entry: path.resolve(__dirname, isProduction ? 'es' : 'demo', 'index.js'),
   optimization,
   output: {
     filename: 'redux-segment-node.js',
@@ -61,28 +58,28 @@ const config = {
   },
   resolve: {
     extensions: ['.js'],
-    modules: [
-      'node_modules',
-      path.resolve(__dirname, 'src'),
-    ],
+    modules: ['node_modules', path.resolve(__dirname, 'es')],
   },
   plugins,
   module: {
-    rules: [{
-      enforce: 'pre',
-      test: /\.js$/,
-      loader: 'eslint-loader',
-      include: path.resolve('./src'),
-      options: {
-        failOnWarning: true,
-        failOnError: true,
-        emitWarning: true,
+    rules: [
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'eslint-loader',
+        include: path.resolve('./es'),
+        options: {
+          failOnWarning: true,
+          failOnError: true,
+          emitWarning: true,
+        },
       },
-    }, {
-      test: /\.js$/,
-      use: 'babel-loader',
-      exclude: /node_modules|bower_components/,
-    }],
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules|bower_components/,
+      },
+    ],
   },
   externals: {},
   devtool: isProduction ? false : 'eval-source-map',
