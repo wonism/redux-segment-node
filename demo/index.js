@@ -1,7 +1,7 @@
-import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import createSegmentTracker from '../src';
-import uid from '../src/utils/uid';
+import createSegmentTracker from '../es';
+import uid from '../es/utils/uid';
 import config from '../config.json';
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -12,7 +12,9 @@ const segmentMiddleware = createSegmentTracker({
 });
 
 const middleware = applyMiddleware(segmentMiddleware);
-const composeEnhancers = !isProduction ? global.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || composeWithDevTools : compose;
+const composeEnhancers = !isProduction
+  ? global.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || composeWithDevTools
+  : compose;
 const store = createStore(state => state, {}, composeEnhancers(middleware));
 
 store.dispatch({

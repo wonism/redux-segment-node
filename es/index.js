@@ -2,6 +2,14 @@ import typeOf from 'type-of';
 import Analytics from './analytics';
 import oneOf from './utils/oneOf';
 import {
+  /** Platforms */
+  WEB,
+  ANDROID,
+  IOS,
+  /** Some actions */
+  SIGN_OUT,
+  LOG_OUT,
+  /** Event types */
   EVENT_TYPE_IDENTIFY,
   EVENT_TYPE_GROUP,
   EVENT_TYPE_TRACK,
@@ -38,3 +46,17 @@ export default function createSegmentTracker(options = {}) {
     return next(action);
   };
 }
+
+export {
+  WEB,
+  ANDROID,
+  IOS,
+  SIGN_OUT,
+  LOG_OUT,
+  EVENT_TYPE_IDENTIFY,
+  EVENT_TYPE_GROUP,
+  EVENT_TYPE_TRACK,
+  EVENT_TYPE_PAGE,
+  EVENT_TYPE_SCREEN,
+  EVENT_TYPE_ALIAS,
+};

@@ -1,6 +1,6 @@
 {
   "name": "redux-segment-node",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "redux middleware for segment",
   "jsnext:main": "es/index.js",
   "main": "dist/redux-segment-node.js",
