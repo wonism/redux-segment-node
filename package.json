@@ -1,6 +1,6 @@
 {
   "name": "redux-segment-node",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "redux middleware for segment",
   "jsnext:main": "es/index.js",
   "main": "dist/redux-segment-node.js",
@@ -53,7 +53,7 @@
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.3",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
     "base-64": "^0.1.0",

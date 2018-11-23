@@ -20,3 +20,6 @@ __1.0.4 (2018-10-14)__
 
 __1.0.5 (2018-10-26)__
 - write test codes
+
+__1.0.6 (2018-11-24)__
+- update some dependencies
